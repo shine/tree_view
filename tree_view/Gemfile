@@ -20,4 +20,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+end
+
 gem 'jquery-rails'

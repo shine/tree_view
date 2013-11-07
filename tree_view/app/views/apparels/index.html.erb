@@ -3,7 +3,14 @@
 	<%= button_tag :search %>
 <% end %>
 <div>
-	<% @apparels.each do |a| %>
-		<%= render_apparel a %>
+	<% if @roots.empty? %>
+		No apparels were found.
+	<% else %>
+		<% @roots.each do |r| %>
+			<%= render_apparel(r, @apparel_path_ids) %>
+		<% end %>
 	<% end %>
+</div>
+<div>
+	<%= link_to 'Add item', new_apparel_path %>
 </div>
