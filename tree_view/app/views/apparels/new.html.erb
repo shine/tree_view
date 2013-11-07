@@ -1,14 +1,14 @@
 <%= form_for @apparel do |f| %>
-	<%= render "shared/error_messages", :target => @apparel %>
-	<p>
-		<%= f.label :name, :empty => true %>
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :parent_id, 'Parent' %>
-		<%= f.select :parent_id, @parents.map{|p| [p.name, p.id]}, :include_blank => true %>
-	</p>
-	<p>
-		<%= f.submit 'Create' %>
-	</p>
+  <%= render "shared/error_messages", :target => @apparel %>
+  <p>
+    <%= f.label :name, :empty => true %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :parent_id, 'Parent' %>
+    <%= f.select :parent_id, @parents.map{|p| [p.name, p.id]}, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
 <% end %>

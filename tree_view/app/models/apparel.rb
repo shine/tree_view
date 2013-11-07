@@ -1,5 +1,5 @@
 class Apparel < ActiveRecord::Base
-	has_ancestry
+  has_ancestry
 
   attr_accessible :ancestry, :name, :parent_id
 

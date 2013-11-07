@@ -1,16 +1,16 @@
 <%= form_tag(apparels_path, method: "GET") do %>
-	<%= text_field_tag :filter, params[:filter] %>
-	<%= button_tag :search %>
+  <%= text_field_tag :filter, params[:filter] %>
+  <%= button_tag :search %>
 <% end %>
 <div>
-	<% if @roots.empty? %>
-		No apparels were found.
-	<% else %>
-		<% @roots.each do |r| %>
-			<%= render_apparel(r, @apparel_path_ids) %>
-		<% end %>
-	<% end %>
+  <% if @roots.empty? %>
+    No apparels were found.
+  <% else %>
+    <% @roots.each do |r| %>
+      <%= render_apparel(r, @apparel_path_ids) %>
+    <% end %>
+  <% end %>
 </div>
 <div>
-	<%= link_to 'Add item', new_apparel_path %>
+  <%= link_to 'Add item', new_apparel_path %>
 </div>
