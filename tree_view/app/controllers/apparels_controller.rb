@@ -1,13 +1,6 @@
 class ApparelsController < ApplicationController
   def index
-    apparels =  if params[:filter]
-                  Apparel.select('id, ancestry').where("name LIKE ? ", "%"+params[:filter]+"%").all
-                else
-                  Apparel.select('id, ancestry').all
-                end
-
-    @apparel_path_ids = apparels.inject([]){|arr, item| arr|item.path_ids} # ids of nodes need to be shown
-    @roots = Apparel.where(:ancestry => nil).where(:id => @apparel_path_ids).all
+    @roots, @apparel_path_ids = Apparel.search(params[:filter])
   end
 
   def new
